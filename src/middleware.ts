@@ -1,23 +1,18 @@
-import { COOKIE_NAME, getServerClient } from "@/lib/pocketbase-server";
-import { NextRequest, NextResponse } from "next/server";
-import { AsyncAuthStore } from "pocketbase";
+import { updateSession } from "@/lib/pocketbase/middleware";
+import { NextRequest } from "next/server";
 
 export async function middleware(request: NextRequest) {
-  const response = NextResponse.next();
-
-  await getServerClient({
-    store: new AsyncAuthStore({
-      save: async (serialized) => {
-        request.cookies.set(COOKIE_NAME, serialized);
-        response.cookies.set(COOKIE_NAME, serialized);
-      },
-      clear: async () => {
-        request.cookies.delete(COOKIE_NAME);
-        response.cookies.delete(COOKIE_NAME);
-      },
-      initial: request.cookies.get(COOKIE_NAME)?.value,
-    }),
-  });
-
-  return response;
+  return await updateSession(request);
 }
+
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico, sitemap.xml, robots.txt (metadata files)
+     */
+    "/((?!_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
+  ],
+};
