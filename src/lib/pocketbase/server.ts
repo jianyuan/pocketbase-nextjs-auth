@@ -30,7 +30,7 @@ export async function createServerClient() {
         }
       },
       initial: cookieStore.get(COOKIE_NAME)?.value,
-    })
+    }),
   ) as TypedPocketBase;
 
   return client;

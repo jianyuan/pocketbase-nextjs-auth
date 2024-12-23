@@ -25,7 +25,7 @@ export async function updateSession(request: NextRequest) {
         response.cookies.delete(COOKIE_NAME);
       },
       initial: request.cookies.get(COOKIE_NAME)?.value,
-    })
+    }),
   ) as TypedPocketBase;
 
   // Check if the session is still valid
@@ -39,7 +39,7 @@ export async function updateSession(request: NextRequest) {
 
   if (
     !client.authStore.isValid &&
-    !request.nextUrl.pathname.startsWith("/login")
+    !["/", "/login", "/register"].includes(request.nextUrl.pathname)
   ) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";

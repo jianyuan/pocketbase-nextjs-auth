@@ -3,48 +3,48 @@
 import { createBrowserClient } from "@/lib/pocketbase/client";
 import { TypedPocketBase } from "@/lib/pocketbase/types";
 import { AuthRecord } from "pocketbase";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useRef } from "react";
 
 const PocketBaseContext = createContext<TypedPocketBase | null>(null);
-const UserContext = createContext<AuthRecord | null>(null);
-
-export function useUser() {
-  return useContext(UserContext);
-}
 
 export function usePocketBase() {
-  return useContext(PocketBaseContext);
+  return useContext(PocketBaseContext)!;
 }
 
-const client = createBrowserClient();
+export function useUser() {
+  const client = usePocketBase();
+  return client.authStore.record;
+}
 
 export function PocketBaseProvider({
+  initialToken,
+  initialUser,
   children,
 }: {
+  initialToken: string;
+  initialUser: AuthRecord;
   children?: React.ReactNode;
 }) {
-  const [user, setUser] = useState<AuthRecord | null>(null);
+  const clientRef = useRef<TypedPocketBase>(createBrowserClient());
+  clientRef.current.authStore.save(initialToken, initialUser);
+
   useEffect(() => {
     async function authRefresh() {
-      if (client.authStore.isValid) {
+      if (clientRef.current.authStore.isValid) {
         try {
-          await client.collection("users").authRefresh();
+          await clientRef.current.collection("users").authRefresh();
         } catch {
-          client.authStore.clear();
+          clientRef.current.authStore.clear();
         }
       }
     }
 
     authRefresh();
-
-    return client.authStore.onChange((token, record) => {
-      setUser(record);
-    }, true);
-  }, []);
+  }, [initialToken, initialUser]);
 
   return (
-    <PocketBaseContext.Provider value={client}>
-      <UserContext.Provider value={user}>{children}</UserContext.Provider>
+    <PocketBaseContext.Provider value={clientRef.current}>
+      {children}
     </PocketBaseContext.Provider>
   );
 }
