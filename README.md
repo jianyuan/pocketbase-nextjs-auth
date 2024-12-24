@@ -1,8 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# pocketbase-nextjs-auth
+
+This is a [Next.js](https://nextjs.org) project integrated with [PocketBase](https://pocketbase.io).
+
+## Features
+
+- Dockerized PocketBase server.
+- Basic registration and login pages.
+- Example of server actions.
+- Techniques for both server-side and client-side rendering.
+- Typed PocketBase client using [pocketbase-typegen](https://github.com/patmood/pocketbase-typegen).
 
 ## Getting Started
 
-First, run the development server:
+First, run the PocketBase using Docker compose:
+
+```bash
+docker compose up --detach
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +32,8 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Middleware
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`src/lib/pocketbase/middleware.ts`
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+It is important to note that the project uses Next.js middleware to check authentication on the server side. Make sure to adjust the middleware to allow unrestricted access to specific pages as needed.

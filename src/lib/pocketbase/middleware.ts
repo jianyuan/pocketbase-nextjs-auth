@@ -29,6 +29,7 @@ export async function updateSession(request: NextRequest) {
   ) as TypedPocketBase;
 
   // Check if the session is still valid
+  // IMPORTANT: We must check if the authStore is valid before proceeding with any requests
   if (client.authStore.isValid) {
     try {
       await client.collection("users").authRefresh();
@@ -37,6 +38,8 @@ export async function updateSession(request: NextRequest) {
     }
   }
 
+  // Allow access to the login and register pages
+  // Please adjust this to match your application's security requirements
   if (
     !client.authStore.isValid &&
     !["/", "/login", "/register"].includes(request.nextUrl.pathname)
