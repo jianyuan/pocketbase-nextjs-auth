@@ -38,10 +38,10 @@ importers:
         version: 22.10.5
       '@types/react':
         specifier: ^19
-        version: 19.0.4
+        version: 19.0.5
       '@types/react-dom':
         specifier: ^19
-        version: 19.0.2(@types/react@19.0.4)
+        version: 19.0.3(@types/react@19.0.5)
       daisyui:
         specifier: ^4.12.22
         version: 4.12.23(postcss@8.5.1)
@@ -376,13 +376,13 @@ packages:
   '@types/node@22.10.5':
     resolution: {integrity: sha512-F8Q+SeGimwOo86fiovQh8qiXfFEh2/ocYv7tU5pJ3EXMSSxk1Joj5wefpFK2fHTf/N6HKGSxIDBT9f3gCxXPkQ==}
 
-  '@types/react-dom@19.0.2':
-    resolution: {integrity: sha512-c1s+7TKFaDRRxr1TxccIX2u7sfCnc3RxkVyBIUA2lCpyqCF+QoAwQ/CBg7bsMdVwP120HEH143VQezKtef5nCg==}
+  '@types/react-dom@19.0.3':
+    resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
     peerDependencies:
       '@types/react': ^19.0.0
 
-  '@types/react@19.0.4':
-    resolution: {integrity: sha512-3O4QisJDYr1uTUMZHA2YswiQZRq+Pd8D+GdVFYikTutYsTz+QZgWkAPnP7rx9txoI6EXKcPiluMqWPFV3tT9Wg==}
+  '@types/react@19.0.5':
+    resolution: {integrity: sha512-i4OQzFiqsUCfoBns/KHpz+4QcvfjoCsTUi+mugo3lrSRA3+x0gJVvhZhAJrwLGEqz4EXiFVP4hPnOugx+m2uhg==}
 
   '@typescript-eslint/eslint-plugin@8.18.1':
     resolution: {integrity: sha512-Ncvsq5CT3Gvh+uJG0Lwlho6suwDfUXH0HztslDf5I+F2wAFAZMRwYLEorumpKLzmO2suAXZ/td1tBg4NZIi9CQ==}
@@ -2463,11 +2463,11 @@ snapshots:
     dependencies:
       undici-types: 6.20.0
 
-  '@types/react-dom@19.0.2(@types/react@19.0.4)':
+  '@types/react-dom@19.0.3(@types/react@19.0.5)':
     dependencies:
-      '@types/react': 19.0.4
+      '@types/react': 19.0.5
 
-  '@types/react@19.0.4':
+  '@types/react@19.0.5':
     dependencies:
       csstype: 3.1.3
 
