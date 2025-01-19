@@ -38,10 +38,10 @@ importers:
         version: 22.10.6
       '@types/react':
         specifier: ^19
-        version: 19.0.5
+        version: 19.0.7
       '@types/react-dom':
         specifier: ^19
-        version: 19.0.3(@types/react@19.0.5)
+        version: 19.0.3(@types/react@19.0.7)
       daisyui:
         specifier: ^4.12.22
         version: 4.12.23(postcss@8.5.1)
@@ -381,8 +381,8 @@ packages:
     peerDependencies:
       '@types/react': ^19.0.0
 
-  '@types/react@19.0.5':
-    resolution: {integrity: sha512-i4OQzFiqsUCfoBns/KHpz+4QcvfjoCsTUi+mugo3lrSRA3+x0gJVvhZhAJrwLGEqz4EXiFVP4hPnOugx+m2uhg==}
+  '@types/react@19.0.7':
+    resolution: {integrity: sha512-MoFsEJKkAtZCrC1r6CM8U22GzhG7u2Wir8ons/aCKH6MBdD1ibV24zOSSkdZVUKqN5i396zG5VKLYZ3yaUZdLA==}
 
   '@typescript-eslint/eslint-plugin@8.18.1':
     resolution: {integrity: sha512-Ncvsq5CT3Gvh+uJG0Lwlho6suwDfUXH0HztslDf5I+F2wAFAZMRwYLEorumpKLzmO2suAXZ/td1tBg4NZIi9CQ==}
@@ -2463,11 +2463,11 @@ snapshots:
     dependencies:
       undici-types: 6.20.0
 
-  '@types/react-dom@19.0.3(@types/react@19.0.5)':
+  '@types/react-dom@19.0.3(@types/react@19.0.7)':
     dependencies:
-      '@types/react': 19.0.5
+      '@types/react': 19.0.7
 
-  '@types/react@19.0.5':
+  '@types/react@19.0.7':
     dependencies:
       csstype: 3.1.3
 
