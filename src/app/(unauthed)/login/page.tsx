@@ -8,13 +8,13 @@ export default async function Login() {
         type="email"
         name="email"
         placeholder="Email"
-        className="input input-bordered"
+        className="input w-full"
       />
       <input
         type="password"
         name="password"
         placeholder="Password"
-        className="input input-bordered"
+        className="input w-full"
       />
       <button type="submit" className="btn btn-primary">
         Login

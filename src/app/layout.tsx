@@ -32,7 +32,6 @@ export default async function RootLayout({
     <html
       lang="en"
       className={cn(geistSans.variable, geistMono.variable, "antialiased")}
-      data-theme="lofi"
     >
       <body>
         <PocketBaseProvider
