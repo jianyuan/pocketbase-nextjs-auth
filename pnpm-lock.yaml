@@ -16,7 +16,7 @@ importers:
         version: 15.5.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       pocketbase:
         specifier: ^0.26.0
-        version: 0.26.3
+        version: 0.26.5
       react:
         specifier: ^19.0.0
         version: 19.2.0
@@ -1714,6 +1714,7 @@ packages:
   next@15.5.2:
     resolution: {integrity: sha512-H8Otr7abj1glFhbGnvUt3gz++0AF1+QoCXEBmd/6aKbfdFwrn0LpA836Ed5+00va/7HQSDD+mOoVhn3tNy3e/Q==}
     engines: {node: ^18.18.0 || ^19.8.0 || >= 20.0.0}
+    deprecated: This version has a security vulnerability. Please upgrade to a patched version. See https://nextjs.org/blog/CVE-2025-66478 for more details.
     hasBin: true
     peerDependencies:
       '@opentelemetry/api': ^1.1.0
@@ -1852,8 +1853,8 @@ packages:
     resolution: {integrity: sha512-HWq/vm4zragt68n3ybUj+BoFdwITPgqIdLm/D9VIi9m5a55GgaafpOB9BpKBHkesaDH5f6dOTb3ZWbdwlwmEdQ==}
     hasBin: true
 
-  pocketbase@0.26.3:
-    resolution: {integrity: sha512-5deUKRoEczpxxuHzwr6/DHVmgbggxylEVig8CKN+MjvtYxPUqX/C6puU0yaR2yhTi8zrh7J9s7Ty+qBGwVzWOQ==}
+  pocketbase@0.26.5:
+    resolution: {integrity: sha512-SXcq+sRvVpNxfLxPB1C+8eRatL7ZY4o3EVl/0OdE3MeR9fhPyZt0nmmxLqYmkLvXCN9qp3lXWV/0EUYb3MmMXQ==}
 
   possible-typed-array-names@1.1.0:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
@@ -4291,7 +4292,7 @@ snapshots:
       - encoding
       - supports-color
 
-  pocketbase@0.26.3: {}
+  pocketbase@0.26.5: {}
 
   possible-typed-array-names@1.1.0: {}
 
