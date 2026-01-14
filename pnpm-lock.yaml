@@ -16,7 +16,7 @@ importers:
         version: 15.5.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       pocketbase:
         specifier: ^0.26.0
-        version: 0.26.5
+        version: 0.26.6
       react:
         specifier: ^19.0.0
         version: 19.2.3
@@ -1850,8 +1850,8 @@ packages:
     resolution: {integrity: sha512-9RnoS0Hm7kg4dEAV0zz21OkULy+t1DpWBeZHT9j4ZJu3L58pdfva/2314mhfE2hrOUeNiedqoFtfkJ9ZYQ8yng==}
     hasBin: true
 
-  pocketbase@0.26.5:
-    resolution: {integrity: sha512-SXcq+sRvVpNxfLxPB1C+8eRatL7ZY4o3EVl/0OdE3MeR9fhPyZt0nmmxLqYmkLvXCN9qp3lXWV/0EUYb3MmMXQ==}
+  pocketbase@0.26.6:
+    resolution: {integrity: sha512-Pl7V4y3DWglYITC4cBpclmuIzePRGsb/sXk/Wyqxznwu5JsHA5IILJY81PT2XQ3OSKCakWjbxjYBqtdcghzKvA==}
 
   possible-typed-array-names@1.1.0:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
@@ -4286,7 +4286,7 @@ snapshots:
       - encoding
       - supports-color
 
-  pocketbase@0.26.5: {}
+  pocketbase@0.26.6: {}
 
   possible-typed-array-names@1.1.0: {}
 
